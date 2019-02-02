@@ -1,0 +1,48 @@
+/* general css */
+*{
+    box-sizing: border-box; 
+    font-family: sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    /* background-image: url("https://wallup.net/wp-content/uploads/2015/06/abstract-minimalistic-text-typography-grayscale-focused-into-newspaper-748x468.jpg"); */
+}
+
+header {
+    background-color: #1d67a7eb;
+    padding: 20px;
+    font-size: 22px;
+    /* position: fixed; */
+    width: 100%;
+    color: #fff;  
+}
+
+/* header css */
+.user-profile-photo {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    float: right;
+    margin-right: 10%;
+}
+
+ul.user-profile-options {
+    position: absolute;
+    right: 4.5%;
+    top: 46px;
+    box-shadow: 3px 2px 9px 0px #1d67a7eb;
+    color: #1d67a7eb;
+    background-color: #fff;
+    border: 1px solid #1d67a7eb;  
+    padding: 0; 
+}
+
+.user-profile-options li{
+    list-style-type: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    border-bottom: 1px solid#1d67a7eb;
+}
+

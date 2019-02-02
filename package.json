@@ -1,0 +1,48 @@
+{
+  "name": "ruhi-filter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
+  },
+  "proxy": "http://localhost:5002/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruhichandra14/react-multi-level-filter.git"
+  },
+  "author": "ruhi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruhichandra14/react-multi-level-filter/issues"
+  },
+  "homepage": "https://github.com/ruhichandra14/react-multi-level-filter#readme",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.2.3",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "regenerator-runtime": "^0.13.1",
+    "router-express": "^1.5.2"
+  }
+}

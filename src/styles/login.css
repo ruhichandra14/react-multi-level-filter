@@ -1,0 +1,40 @@
+/* general css */
+.btn{
+    background-color:#1d67a7eb;
+    color: #fff;
+    font-size: 16px;
+}
+.error-msg{
+    color: #e80b0b;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* login css */
+.input-username, .input-password, .btn-login{
+    display: block;
+    width: 57%;
+    margin: 2px auto 8px;
+    padding: 20px 15px;
+}
+
+/* correct this */
+.label-username, .label-password {
+    margin: 2px auto;
+    display: block;
+    width: 57%;
+    color: #8080806b;
+    font-weight: lighter;
+}
+
+.login-form{
+    margin: auto;
+    display: block;
+    width: 40%;
+    margin-top: 200px;
+}
+
+.login-error-msg{
+    width: 23%;
+    margin: 2px auto;
+}
