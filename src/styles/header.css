@@ -3,13 +3,10 @@
     box-sizing: border-box; 
     font-family: sans-serif;
 }
-
 body{
     margin: 0;
     padding: 0;
-    /* background-image: url("https://wallup.net/wp-content/uploads/2015/06/abstract-minimalistic-text-typography-grayscale-focused-into-newspaper-748x468.jpg"); */
 }
-
 header {
     background-color: #1d67a7eb;
     padding: 20px;
@@ -20,29 +17,42 @@ header {
 }
 
 /* header css */
+a.website-name {
+    color: white;
+    text-decoration: none;
+    margin-left: 3%;
+}
 .user-profile-photo {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border: 1px solid #fff;
     float: right;
-    margin-right: 10%;
+    padding: 0;
+    margin-right: 3%;
+    cursor: pointer;
+    background-size: cover;
+    border-radius: 50%;
+    background-image: url(https://cdn1.iconfinder.com/data/icons/business-users/512/circle-512.png);
 }
-
 ul.user-profile-options {
     position: absolute;
     right: 4.5%;
     top: 46px;
-    box-shadow: 3px 2px 9px 0px #1d67a7eb;
     color: #1d67a7eb;
     background-color: #fff;
     border: 1px solid #1d67a7eb;  
+    border-bottom: 1px;
     padding: 0; 
+    display:none;
 }
-
 .user-profile-options li{
     list-style-type: none;
     padding: 10px 30px;
     font-size: 16px;
     border-bottom: 1px solid#1d67a7eb;
+    cursor: pointer;
+}
+button.user-profile-photo:focus + .user-profile-options{
+    display: block;
 }
 

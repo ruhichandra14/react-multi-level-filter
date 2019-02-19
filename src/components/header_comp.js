@@ -11,12 +11,12 @@ export default class HeaderComponent extends Component{
         let headerOptions;
 
         if(isUserLoggedIn){
-            headerOptions = <span className = "user-info"><div className = "user-profile-photo"></div><ul className = "user-profile-options"><li>Profile</li><li>Logout</li></ul></span>
+            headerOptions = <span className = "user-info"><button className = "user-profile-photo"></button><ul className = "user-profile-options"><li>Profile</li><li>Logout</li></ul></span>
         }
 
         return(
             <header className = "page-header">
-                <span>Your NewsFinder!</span>
+                <a className = "website-name" href= "/">Your NewsFinder!</a>
                 {headerOptions}
             </header>
         )

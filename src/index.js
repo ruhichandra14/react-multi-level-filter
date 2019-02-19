@@ -1,15 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import HeaderComponent from "./components/header";
-import LoginComponent from "./components/login";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from 'redux';
+
+import MainContainer from "./containers/main";
+import rootReducer from "./reducers/root_reducer";
+
+
+const store  = createStore(rootReducer);
+console.log("intial state-- ",store.getState());
 
 const FilterApp = () => {
   return (
-        <React.Fragment>
-          <HeaderComponent/>
-          <LoginComponent/>
-        </React.Fragment>
+        <MainContainer/>
   ) 
 };
 
-ReactDOM.render(<FilterApp />, document.getElementById("app"));
+ReactDOM.render(
+        <Provider store = {store}>
+          <FilterApp />
+        </Provider>
+          , document.getElementById("app")
+);
