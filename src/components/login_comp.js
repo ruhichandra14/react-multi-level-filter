@@ -3,7 +3,11 @@ import css from "../styles/login.css";
 import regeneratorRuntime from "regenerator-runtime";
 import axios from "axios";
 
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 export default class LoginComponent extends Component {
   constructor(props) {
@@ -47,12 +51,13 @@ export default class LoginComponent extends Component {
     })
     .then((response) => {
       if(response.data === "success"){
-        this.props.userLoginHandler();
         this.setState({ message: this.props.IsUserLoggedIn});
       }
       else if(response.data === "failure"){
-        this.setState({ message: "invalid username or password"});
+        this.setState({ message: "Invalid username or password"});
       }
+      let responseData = response.data;
+      this.props.userLoginHandler(responseData);
     })
     .catch((error) => {
       console.log(error);
@@ -67,7 +72,7 @@ export default class LoginComponent extends Component {
           <input type="username" className="input-username" onChange={ this.handleUsernameInput } value={ this.state.username }/>
           <label htmlFor="password" className="label-password">Password</label>
           <input type="password" className="input-password" onChange={ this.handlePasswordInput  } value={ this.state.password }/>
-          <input type="submit" value="Login" className="btn btn-login" />
+          <Link to = "/dashboard" className = "link-dashboard"><input type="submit" value="Login" className="btn btn-login" /></Link>
         </form>
         <p className = "error-msg login-error-msg">{this.state.message}</p>
       </section>

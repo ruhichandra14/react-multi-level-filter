@@ -1,0 +1,17 @@
+.bar-chart{
+    background-color: rgba(130, 127, 10, 0.1);
+    display: inline-block;
+    margin: 100px 9%;
+    border: 1px solid #bdb76b;
+}
+
+.container-1 {
+    width: 33%;
+    display: inline-block;
+}
+
+.chart-container {
+    display: block;
+    width: 90%;
+    margin: auto;
+}

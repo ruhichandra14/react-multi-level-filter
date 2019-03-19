@@ -1,8 +1,8 @@
 //import { CLICKED_LOGIN } from './constants';
 
-export function userLoginHandler(){
-    console.log("action hit!!");
+export function userLoginHandler(responseData){
     return {
-        type : "CLICKED_LOGIN"
+        type : "CLICKED_LOGIN",
+        payload: responseData
     }
 }

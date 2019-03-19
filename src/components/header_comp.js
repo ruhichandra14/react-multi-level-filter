@@ -3,15 +3,16 @@ import css from "../styles/header.css";
 
 export default class HeaderComponent extends Component{
     state = {
-        userName : "ruhi",
-        isUserLoggedIn : true 
+        
     }
     render(){
-        const isUserLoggedIn = this.state.isUserLoggedIn;
+        const isUserLoggedIn = this.props.IsUserLoggedIn;
         let headerOptions;
-
-        if(isUserLoggedIn){
+        if(isUserLoggedIn == "success"){
             headerOptions = <span className = "user-info"><button className = "user-profile-photo"></button><ul className = "user-profile-options"><li>Profile</li><li>Logout</li></ul></span>
+        }
+        else{
+            headerOptions = "";
         }
 
         return(
@@ -22,3 +23,8 @@ export default class HeaderComponent extends Component{
         )
     }
 }
+
+
+
+
+

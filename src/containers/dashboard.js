@@ -1,16 +1,15 @@
 import React, { Component} from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import PropTypes from 'prop-types';
 
-import HeaderComponent from "../components/header_comp";
+import DashboardComponent from "../components/dashboard_comp";
 
-class HeaderContainer extends Component{
+class DashboardContainer extends Component{
 
     render(){
         console.log("this.props- header container",this.props);
         return(
-            <HeaderComponent {...this.props}/>
+               <DashboardComponent/>
         )
     }
 }
@@ -21,6 +20,6 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps)(HeaderContainer);
+export default connect(mapStateToProps)(DashboardContainer);
 
 

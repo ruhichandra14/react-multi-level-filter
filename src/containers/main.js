@@ -4,20 +4,40 @@ import { bindActionCreators } from "redux";
 
 import HeaderContainer from "../containers/header";
 import LoginContainer from "../containers/login";
+import DashboardContainer from "../containers/dashboard";
 
+import { Switch, Router, Route, HashRouter, BrowserRouter } from 'react-router-dom';
 
-export default class MainContainer extends Component{
+class MainContainer extends Component{
 
     render(){
+        console.log("main-- ", this.props.IsUserLoggedIn);
+    
         return(
             <React.Fragment>
                 <HeaderContainer/>
-                <LoginContainer/>
+                <section>
+                    <BrowserRouter>
+                            <Switch>
+                                <Route exact path="/" component={LoginContainer} />
+                                <Route path="/dashboard" component={DashboardContainer} />
+                            </Switch>
+                    </BrowserRouter>
+                </section>
+
+
             </React.Fragment>
         )
     }
 }
 
+const mapStateToProps = (state) => {
+	return {
+		IsUserLoggedIn: state.IsUserLoggedIn,
+	}
+  }
+
+export default connect(mapStateToProps)(MainContainer);
 
 
 
