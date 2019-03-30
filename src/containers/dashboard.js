@@ -2,24 +2,18 @@ import React, { Component} from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
+import { getChartTypeClasses } from '../actions/chart_type_action';
 import DashboardComponent from "../components/dashboard_comp";
 
 class DashboardContainer extends Component{
-
     render(){
-        console.log("this.props- header container",this.props);
         return(
-               <DashboardComponent/>
+               <DashboardComponent {...this.props}/>
         )
     }
 }
 
-function mapStateToProps(state){
-    return {
-        IsUserLoggedIn: state.IsUserLoggedIn
-    }
-}
+const mapStateToProps = (state) => ({IsUserLoggedIn: state.IsUserLoggedIn, ChartClasses: state.ChartClasses})
+const mapDispatchToProps = (dispatch) => bindActionCreators({getChartTypeClasses : getChartTypeClasses}, dispatch)
 
-export default connect(mapStateToProps)(DashboardContainer);
-
-
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer);

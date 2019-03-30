@@ -5,13 +5,25 @@
     border: 1px solid #bdb76b;
 }
 
-.container-1 {
-    width: 33%;
-    display: inline-block;
-}
-
-.chart-container {
+.chart-parent-container {
     display: block;
     width: 90%;
     margin: auto;
+}
+
+
+
+/* all - dashboard type of dashboard */
+
+.bar-chart-container {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.highlights-container{
+    order: 2;
+}
+
+.bar-chart{
+    order: 1;
 }

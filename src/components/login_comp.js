@@ -65,6 +65,13 @@ export default class LoginComponent extends Component {
   }
 
   render() {
+    let loginHTML;
+    if(this.props.IsUserLoggedIn === "success"){
+      loginHTML = <Link to = "/dashboard" className = "link-dashboard"><input type="submit" value="Login" className="btn btn-login" /></Link>
+    }
+    else{
+      loginHTML = <input type="submit" value="Login" className="btn btn-login"/>;
+    }
     return (
       <section className = "form-container" >
         <form className="login-form" onSubmit={this.handleSubmit}>
@@ -72,7 +79,7 @@ export default class LoginComponent extends Component {
           <input type="username" className="input-username" onChange={ this.handleUsernameInput } value={ this.state.username }/>
           <label htmlFor="password" className="label-password">Password</label>
           <input type="password" className="input-password" onChange={ this.handlePasswordInput  } value={ this.state.password }/>
-          <Link to = "/dashboard" className = "link-dashboard"><input type="submit" value="Login" className="btn btn-login" /></Link>
+          {loginHTML}
         </form>
         <p className = "error-msg login-error-msg">{this.state.message}</p>
       </section>

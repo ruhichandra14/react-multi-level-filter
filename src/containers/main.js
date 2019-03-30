@@ -11,8 +11,6 @@ import { Switch, Router, Route, HashRouter, BrowserRouter } from 'react-router-d
 class MainContainer extends Component{
 
     render(){
-        console.log("main-- ", this.props.IsUserLoggedIn);
-    
         return(
             <React.Fragment>
                 <HeaderContainer/>

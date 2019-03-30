@@ -2,7 +2,6 @@ import React, { Component} from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-
 import LoginComponent from "../components/login_comp";
 import { userLoginHandler } from '../actions/login_action';
 
@@ -22,7 +21,7 @@ class LoginContainer extends Component{
 
 const mapStateToProps = (state) => {
 	return {
-		IsUserLoggedIn: state.IsUserLoggedIn,
+		IsUserLoggedIn: state.IsUserLoggedIn
 	}
   }
 

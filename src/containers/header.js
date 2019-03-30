@@ -8,7 +8,6 @@ import HeaderComponent from "../components/header_comp";
 class HeaderContainer extends Component{
 
     render(){
-        console.log("this.props- header container",this.props);
         return(
             <HeaderComponent {...this.props}/>
         )
