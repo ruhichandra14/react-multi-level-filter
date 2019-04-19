@@ -1,0 +1,33 @@
+.news-filter-btn {
+    font-size: 10px;
+    text-align: center;
+    -webkit-appearance: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    color: #696969cc;
+    background-image: url(https://cdn4.iconfinder.com/data/icons/ui-admin-side-menu-set-32-vol-1/40/Filter2x-512.png);
+    background-repeat: no-repeat;
+    background-position-x: 2%;
+    background-position-y: 50%;
+    padding: 15px 15px;
+    text-align: center;
+    background-size: 30px;
+    background-color: transparent !important;
+}
+
+.news-sort-btn {
+    font-size: 10px;
+    text-align: center;
+    background-color: transparent !important;
+    -webkit-appearance: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    color: #696969cc;
+    background-image: url(https://png.pngtree.com/svg/20170619/446d446a9d.png);
+    background-repeat: no-repeat;
+    background-position-x: 2%;
+    background-position-y: 50%;
+    padding: 15px 15px;
+    text-align: center;
+    background-size: 30px;
+}

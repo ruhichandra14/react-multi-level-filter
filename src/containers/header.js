@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import PropTypes from 'prop-types';
 
+import { menuClickHandler } from '../actions/nav_menu_action';
 import HeaderComponent from "../components/header_comp";
 
 class HeaderContainer extends Component{
@@ -14,12 +15,13 @@ class HeaderContainer extends Component{
     }
 }
 
-function mapStateToProps(state){
-    return {
-        IsUserLoggedIn: state.IsUserLoggedIn
-    }
-}
+const mapStateToProps = (state) => ({
+    IsUserLoggedIn : state.IsUserLoggedIn,
+    IsNavigationMenuClicked : state.IsNavigationMenuClicked
+})
 
-export default connect(mapStateToProps)(HeaderContainer);
+const mapDispatchToProps = (dispatch) => bindActionCreators({menuClickHandler : menuClickHandler}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);
 
 

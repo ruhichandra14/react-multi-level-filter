@@ -9,7 +9,6 @@ import { userLoginHandler } from '../actions/login_action';
 class LoginContainer extends Component{
 
     render(){
-			console.log("this.props- login container",this.props);
 			return(
 				<React.Fragment>
 							<LoginComponent {...this.props}/>

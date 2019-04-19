@@ -2,11 +2,10 @@
 *{
     box-sizing: border-box; 
     font-family: sans-serif;
-}
-body{
     margin: 0;
     padding: 0;
 }
+
 header {
     background-color: #1d67a7eb;
     padding: 20px;
@@ -20,7 +19,9 @@ header {
 a.website-name {
     color: white;
     text-decoration: none;
-    margin-left: 3%;
+    position: relative;
+    left: 5%;
+    bottom: 2px;
 }
 .user-profile-photo {
     width: 25px;
@@ -29,6 +30,7 @@ a.website-name {
     float: right;
     padding: 0;
     margin-right: 3%;
+    margin-top: 6px;
     cursor: pointer;
     background-size: cover;
     border-radius: 50%;
