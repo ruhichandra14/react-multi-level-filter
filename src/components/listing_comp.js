@@ -16,6 +16,7 @@ class ListingComponent extends Component{
             newsListArr : []
         };
         this.generateNewsHTML = this.generateNewsHTML.bind(this);
+        this.newsBlockHTML = this.newsBlockHTML.bind(this);
        
     }
 
@@ -27,7 +28,22 @@ class ListingComponent extends Component{
         })
     }
 
-    generateNewsHTML(newsCategory){
+    newsBlockHTML(){
+        return (
+            <li className = "news-list-item" key = {keyVal}>
+                <img className = "news-category-image" src = "http://www.polarisnetworks.net/images/news_icon.png"/>
+                <div className = "news-block">
+                    <h3 className = "news-title">{news_title}</h3>
+                    <div className = "news-small-description">{news_description}</div>
+                    <span className = "news-category">{category}</span>
+                    <span className = "news-author">By {author}</span>
+                    <span className = "news-posted">Posted {posted_time}</span>
+                </div>
+            </li>
+        )
+    }
+
+    generateNewsHTML(newsCategory, searchedText){
         let newsHTML;
         let keyVal = 0;
         if(this.state.newsListArr.length){
@@ -57,15 +73,16 @@ class ListingComponent extends Component{
     }
 
     render(){
+        console.log("search ", this.props.SearchText);
         let newsCategory = this.props.TabType;
-        console.log("tab comp in listin ", )
+        let searchedText = this.props.SearchText;
         let listingItems = 
             this.state.newsListArr.length ? 
                 <React.Fragment>
                     <SearchContainer/>
                     <SortContainer/>
                     <TabContainer/>
-                    <ul className = "news-list">{this.generateNewsHTML(newsCategory)}</ul>
+                    <ul className = "news-list">{this.generateNewsHTML(newsCategory, searchedText)}</ul>
                 </React.Fragment> 
                 : <Loader className = "loading-icon" type="Circles" color="#d3d3d3" height="100" width="100"/>
        

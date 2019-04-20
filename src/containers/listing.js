@@ -20,7 +20,7 @@ class ListingContainer extends Component{
     }
 }
 
-const mapStateToProps = (state) => ({TabType : state.TabType})
+const mapStateToProps = (state) => ({TabType : state.TabType, SearchText: state.SearchText})
 
 export default connect(mapStateToProps)(ListingContainer);
 

@@ -1,6 +1,6 @@
-export function newsSearchHandler(){
+export function newsSearchHandler(searchedText){
     return{
         type: "NEWS_SEARCH",
-        payload: true
+        payload: searchedText
     }
 }

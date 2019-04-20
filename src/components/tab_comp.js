@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import css from "../styles/search.css";
+import css from "../styles/tab.css";
 
 export default class TabComponent extends Component{
     constructor(props){
@@ -15,7 +15,7 @@ export default class TabComponent extends Component{
     generateCategoryHTML(){
         let tabContainerHTML;
         //using the hardcoded categories for now
-        let newsCategoryList = ["entertainment", "health", "international", "politics", "technology", "sports", "general", "nature", " technology"]
+        let newsCategoryList = ["entertainment", "health", "international", "politics", "technology", "sports", "general", "nature"];
         tabContainerHTML = newsCategoryList.map((categoryItem, index) => {
             let activeCategoryClass = "news-category-item " + ((this.state.newsCategory === "entertainment" && index == "0") ? "active" : "");
             return(

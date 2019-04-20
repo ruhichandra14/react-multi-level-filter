@@ -7,17 +7,46 @@ export default class SearchComponent extends Component{
         this.state = {
         
         }
+        this.searchHandler = this.searchHandler.bind(this);
+        this.onChangeHandler = this.onChangeHandler.bind(this);
+        this.filterSearchText = this.filterSearchText.bind(this);
+        this.SearchDebounceFunc = this.debounceFunc(this.searchHandler , 5000);
     }
 
-    componentDidMount(){
-        console.log("search...componentDidMount.. ", this.props);
+    onChangeHandler = (e) => {
+        e.persist();
+        this.SearchDebounceFunc(e);
     }
-   
+
+    searchHandler(e){
+        let filteredSearchedText = this.filterSearchText(e.target.value);
+        if(filteredSearchedText){
+            console.log("filteredSearchedText text is ... ",filteredSearchedText);
+            this.props.newsSearchHandler(filteredSearchedText);
+        }
+    }
+
+    // filter out special characters
+    filterSearchText(searchedText){
+        var regExp = /[^a-zA-Z]/gi ;
+        return searchedText.replace(regExp, "");
+    }
+
+    // util debounce function 
+    debounceFunc(searchHandler, delay){
+        let searchFuncTimer;
+        return function(){
+            const context = this;
+            const args = arguments;
+            clearTimeout(searchFuncTimer);
+            searchFuncTimer = setTimeout(()=>{ searchHandler.apply(context, args) }, delay)
+        }
+    }
+
     render(){
-        console.log("search...render.. ", this.props);
         return(
             <React.Fragment>
-                <input type = "search" className = "news-search" placeholder = "search your news" onClick = {this.props.newsSearchHandler}/>
+                <input type = "search" className = "news-search" placeholder = "search by title or category" onChange = {this.onChangeHandler}/>
             </React.Fragment>
         )
     }

@@ -23,11 +23,11 @@ class SearchContainer extends Component{
     }
 }
 
-const mapStateToProps = (state) => ({SearchState : state.SearchState})
+const mapStateToProps = (state) => ({SearchText : state.SearchText})
 const mapDispatchToProps = (dispatch) => bindActionCreators({ newsSearchHandler : newsSearchHandler},dispatch)
 
 
-export default SearchContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
 
 
 
