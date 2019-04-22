@@ -13,7 +13,7 @@ KEYPOINTS:  react@16.7, @react-router-dom@v4.3, new life cycle events, HTML5, CS
              
 @@Still to done:
 1) Listing Component - Lazy loading , sort and filter options 
-2) Search Component - SQL 
+2) Search Component - query based search - search by title or category 
 3) Update Profile - Editable user fields, Email based update notifications
         
 ***Advanced***
